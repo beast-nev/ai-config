@@ -4,13 +4,19 @@ Shared AI configuration for use across machines.
 
 ## Install
 
-- [RTK](https://github.com/rtk-ai/rtk#installation)
-- [Caveman](https://github.com/JuliusBrussee/caveman/blob/main/INSTALL.md)
-- [Ponytail](https://github.com/DietrichGebert/ponytail#codex)
+### Skills
+
+Install a skill globally for Codex and Claude Code:
+
+```bash
+npx skills add <owner>/<repository> --global --agent codex --agent claude-code
+```
+
+Replace `<owner>/<repository>` with skill repository, such as `vercel-labs/agent-skills`.
 
 ## Share preferences between Codex and Claude
 
-`configs/FORBIDDEN_PATTERNS.md` and `configs/OPINIONS.md` are canonical files.
+`configs/AGENTS.md`, `configs/FORBIDDEN_PATTERNS.md`, and `configs/OPINIONS.md` are canonical files.
 Link each AI tool's copy to them so one edit applies everywhere.
 
 ### Linux
@@ -24,6 +30,7 @@ ln -sfn "$PWD/configs/FORBIDDEN_PATTERNS.md" ~/.codex/FORBIDDEN_PATTERNS.md
 ln -sfn "$PWD/configs/OPINIONS.md" ~/.codex/OPINIONS.md
 ln -sfn "$PWD/configs/FORBIDDEN_PATTERNS.md" ~/.claude/FORBIDDEN_PATTERNS.md
 ln -sfn "$PWD/configs/OPINIONS.md" ~/.claude/OPINIONS.md
+ln -sfn "$PWD/configs/AGENTS.md" ~/.claude/CLAUDE.md
 ```
 
 `ln -sfn` safely refreshes existing symlinks, but will not overwrite a regular file.
@@ -44,6 +51,7 @@ New-Item -ItemType SymbolicLink -Path "$HOME\.codex\FORBIDDEN_PATTERNS.md" -Targ
 New-Item -ItemType SymbolicLink -Path "$HOME\.codex\OPINIONS.md" -Target "$source\OPINIONS.md"
 New-Item -ItemType SymbolicLink -Path "$HOME\.claude\FORBIDDEN_PATTERNS.md" -Target "$source\FORBIDDEN_PATTERNS.md"
 New-Item -ItemType SymbolicLink -Path "$HOME\.claude\OPINIONS.md" -Target "$source\OPINIONS.md"
+New-Item -ItemType SymbolicLink -Path "$HOME\.claude\CLAUDE.md" -Target "$source\AGENTS.md"
 ```
 
 If a destination file already exists, move or back it up before creating its symlink.
@@ -54,6 +62,7 @@ Edit only these repository files:
 
 - `configs/FORBIDDEN_PATTERNS.md`
 - `configs/OPINIONS.md`
+- `configs/AGENTS.md`
 
 Restart any agent session already open after editing.
 New sessions read updated files through their symlinks.
