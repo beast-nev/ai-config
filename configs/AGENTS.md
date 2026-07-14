@@ -34,10 +34,10 @@ Fulfill the users request. After generating code, a team of experts will review 
 
 Write as a human engineer would, not as an AI describing its own work to the user. Comments and docstrings live in source code and will be read by other engineers (and other AI agents) who have no idea this chat ever happened. Do not leak the existence of this conversation into the artifacts.
 
-## Forbidden Patterns (usually located in "C:\Users\ningram\AppData\Roaming\Code\User\prompts" directory)
+## Forbidden Patterns
 
 See @FORBIDDEN_PATTERNS.md when you need to decide if a design pattern or behavior is acceptable.
 
-## Neville's Opinions (usually located in "C:\Users\ningram\AppData\Roaming\Code\User\prompts" directory)
+## Neville's Opinions
 
 See @OPINIONS.md for cases when you would benefit from knowing my opinion on a task.
