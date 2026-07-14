@@ -6,13 +6,13 @@ Shared AI configuration for use across machines.
 
 ### Skills
 
-Install a skill globally for Codex and Claude Code:
+Install Matt Pocock's skills:
 
 ```bash
-npx skills add <owner>/<repository> --global --agent codex --agent claude-code
+npx skills add mattpocock/skills
 ```
 
-Replace `<owner>/<repository>` with skill repository, such as `vercel-labs/agent-skills`.
+Choose global installation and select Codex and Claude Code when prompted.
 
 ## Share preferences between Codex and Claude
 
